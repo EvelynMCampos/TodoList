@@ -51,7 +51,7 @@ const renderTodoList = () => {
     <li>
         <input type='checkbox' id='item-${index}' ${item.checked && 'checked'}/>
         <label for='item-${index}'> ${item.name} </label>
-        <button data-js='btn-remove-${index} > </button>
+        <button data-js='btn-remove-${index}'> </button>
     </li>
     `, '')
 }
