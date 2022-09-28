@@ -40,7 +40,7 @@ const addTodoElement = (name) => {
 }
 
 const updateTodoList = (list) => {
-    localStorage.setItem('todolist', JSON.parse(list))
+    localStorage.setItem('todolist', JSON.stringify(list))
 }
 
 const getTodoList = () => localStorage.getItem('todolist') === null ? [] : JSON.parse(localStorage.getItem('todolist'))
