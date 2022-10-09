@@ -1,46 +1,81 @@
-* { 
-    padding: 0; 
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #4863f7;
-    color: #f9f9f9;
-    display:flex;
-    justify-content: center;
+     font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    flex-direction: column;
-
-}
-h1 {
-    text-align: center; 
-    margin: 20px 0;  
+    padding: 10px;
+    font-family: Roboto, Arial, sans-serif;
 }
 
-
-#form {
-    margin: 20px 0;
+header a {
+    margin: auto 10px;
 }
 
-#form input {
-    background: rgba(255, 255, 255,0.2);
-    outline: none;
-    padding: 8px 20px;
-    border-radius: 12px;
-    border: none;
-    color: #f9f9f9;
-    font-size: 16px;
+
+.profile-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+main {
     text-align: center;
+    margin-top: 100px;
 }
 
-#form input::placeholder{
-    color: white;
-}
-#todo-list {
-    margin: 20px;
+main h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    letter-spacing: -5px;
 }
 
-#todo-list li input:checked ~ label {
-    text-decoration: line-through;
+main h1 span:nth-child(1),
+main h1 span:nth-child(4)
+{
+    color: #4285f4;
 }
+
+main h1 span:nth-child(2),
+main h1 span:nth-child(6)
+ {
+    color: #db4437;
+}
+
+main h1 span:nth-child(3)
+ {
+    color: #f4b400;
+}
+
+main h1 span:nth-child(5)
+ {
+    color: #0f9d58;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    border: solid;
+}
+
+/* 
+Ajuste para desktop
+*/
+@media only screen and (min-width: 600px) {
+    header {
+        justify-content:flex-start;
+        flex-direction:row-reverse;
+    }
+  }
