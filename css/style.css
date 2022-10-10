@@ -66,8 +66,66 @@ main h1 span:nth-child(5)
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    max-width: 550px;
     margin: auto;
-    border: solid;
+    margin-top: 40px;
+    border: none;
+    border-radius: 22px;
+    background-color: #f3f3f3;
+    padding: 10px 20px;
+}
+
+.form input {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    flex-grow: 1;
+    margin: 0 20px;
+    color: #494958;
+
+}
+
+#list {
+    display: flex;
+    width: 90%;
+    max-width: 550px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+#list .item {
+    width: 130px;
+    margin: 10px 0;
+
+}
+
+#list .item .rounded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#list .item .icon {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    background-color: #4169e1;
+    color: #e3e3e3;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #999;
+
 }
 
 /* 
