@@ -35,8 +35,8 @@ main {
 
 main h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 66px;
-    letter-spacing: -5px;
+    font-size: 5.4rem;
+    letter-spacing: -.2rem;
 }
 
 main h1 span:nth-child(1),
@@ -86,7 +86,7 @@ main h1 span:nth-child(5)
 
 }
 
-#list {
+#competencies-list {
     display: flex;
     width: 90%;
     max-width: 550px;
@@ -97,26 +97,23 @@ main h1 span:nth-child(5)
     
 }
 
-#list .item {
+#competencies-list .item {
     width: 130px;
     margin: 10px 0;
-
-}
-
-#list .item .rounded {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 15px 0;
 }
 
-#list .item .icon {
+#competencies-list .item .name {
+    margin-top: .8rem;
+}
+
+#competencies-list .item .icon {
     height: 35px;
     width: 35px;
     line-height: 35px;
-    background-color: #4169e1;
-    color: #e3e3e3;
-    border-radius: 50%;
 }
 
 footer {
