@@ -1,3 +1,5 @@
+const $inputSearch = document.querySelector("#input-search")
+
 const competencies = [
     {
         name: "HTML",
@@ -39,4 +41,9 @@ const renderCompetencies = (data) => {
 
 window.addEventListener("load", () => {
     renderCompetencies(competencies)
+})
+
+$inputSearch.addEventListener("keyup", (e) => {
+   value = e.target.value.toUpperCase()
+    console.log(value)
 })
