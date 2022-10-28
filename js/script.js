@@ -1,7 +1,7 @@
 const $inputSearch = document.querySelector("#input-search")
 
 const pagination = {
-    limit: 5, 
+    limit: 8, 
     current: 1,
 }
 
@@ -46,10 +46,7 @@ const competencies = [
 ]
 
 const renderCompetencies = (data) => {
-    competenciesToRender = data.slice(
-        (pagination.current - 1) * pagination.limit,
-        pagination.current * pagination.limit
-    )
+    competenciesToRender = getCompetenciesToRender(data)
     $competenciesList = document.querySelector("#competencies-list")
     $competenciesList.innerHTML = competenciesToRender.map(competence => `
             <div class="item">
@@ -61,7 +58,12 @@ const renderCompetencies = (data) => {
     `)
 }
 
-const getFilteredCompetencies = (competencies) => competencies
+const getCompetenciesToRender = (competencies) => competencies.slice(
+    (pagination.current - 1) * pagination.limit,
+    pagination.current * pagination.limit
+)
+
+const getFilteredCompetencies = () => competencies
     .filter(competence => 
         competence
         .name
@@ -75,8 +77,7 @@ window.addEventListener("load", () => {
 
 $inputSearch.addEventListener("keyup", (e) => {
     value = e.target.value.replace(" ", "").toUpperCase() 
-    filteredCompetencies = getFilteredCompetencies(competencies)
+    filteredCompetencies = getFilteredCompetencies()
     renderCompetencies(filteredCompetencies)
     console.log(filteredCompetencies) 
 })
-
