@@ -45,6 +45,16 @@ const competencies = [
     },
 ]
 
+const renderPagination = () => {
+   labelsToRender = Math.round((competencies.length / pagination.limit) + .49999)
+   $pagination = document.querySelector('#pagination')
+   $pagination.innerHTML = Array.from(Array(labelsToRender).keys()).map(label => `
+        <span ${label+1 == pagination.current ? 'class="active"':''}>
+            ${label+1}
+        </span>
+   `)
+}
+
 const renderCompetencies = (data) => {
     competenciesToRender = getCompetenciesToRender(data)
     $competenciesList = document.querySelector("#competencies-list")
@@ -73,6 +83,7 @@ const getFilteredCompetencies = () => competencies
 
 window.addEventListener("load", () => {
     renderCompetencies(competencies)
+    renderPagination()
 })
 
 $inputSearch.addEventListener("keyup", (e) => {
