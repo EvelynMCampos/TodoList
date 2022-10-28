@@ -1,5 +1,11 @@
 const $inputSearch = document.querySelector("#input-search")
 
+const pagination = {
+    limit: 5, 
+    current: 1,
+}
+
+
 const competencies = [
     {
         name: "HTML",
@@ -24,12 +30,28 @@ const competencies = [
     {
         name: "Python",
         icon: "https://cdn-icons-png.flaticon.com/512/1387/1387537.png",
-    }
+    },
+    {
+        name: "ReactJS",
+        icon: "https://cdn-icons-png.flaticon.com/512/3334/3334886.png",
+    },
+    {
+        name: "Jest",
+        icon: "https://cdn-icons-png.flaticon.com/512/6402/6402320.png",
+    },
+    {
+        name: "Cypress",
+        icon: "https://cdn-icons-png.flaticon.com/512/2033/2033413.png",
+    },
 ]
 
 const renderCompetencies = (data) => {
+    competenciesToRender = data.slice(
+        (pagination.current - 1) * pagination.limit,
+        pagination.current * pagination.limit
+    )
     $competenciesList = document.querySelector("#competencies-list")
-    $competenciesList.innerHTML = data.map(competence => `
+    $competenciesList.innerHTML = competenciesToRender.map(competence => `
             <div class="item">
                 <img src=${competence.icon} class="icon">
                 <span class="name">
@@ -39,13 +61,21 @@ const renderCompetencies = (data) => {
     `)
 }
 
+const getFilteredCompetencies = (competencies) => competencies
+    .filter(competence => 
+        competence
+        .name
+        .toUpperCase()
+        .includes(value)
+    )
+
 window.addEventListener("load", () => {
     renderCompetencies(competencies)
 })
 
 $inputSearch.addEventListener("keyup", (e) => {
     value = e.target.value.replace(" ", "").toUpperCase() 
-    filteredCompetencies = competencies.filter(competence => competence.name.toUpperCase().includes(value))
+    filteredCompetencies = getFilteredCompetencies(competencies)
     renderCompetencies(filteredCompetencies)
     console.log(filteredCompetencies) 
 })
