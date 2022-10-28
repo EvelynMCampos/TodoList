@@ -79,5 +79,4 @@ $inputSearch.addEventListener("keyup", (e) => {
     value = e.target.value.replace(" ", "").toUpperCase() 
     filteredCompetencies = getFilteredCompetencies()
     renderCompetencies(filteredCompetencies)
-    console.log(filteredCompetencies) 
 })
