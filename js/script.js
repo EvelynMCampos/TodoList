@@ -1,10 +1,10 @@
 const $inputSearch = document.querySelector("#input-search")
+const $pagination = document.querySelector("#pagination")
 
 const pagination = {
     limit: 8, 
     current: 1,
 }
-
 
 const competencies = [
     {
@@ -45,11 +45,10 @@ const competencies = [
     },
 ]
 
-const renderPagination = () => {
-   labelsToRender = Math.round((competencies.length / pagination.limit) + .49999)
-   $pagination = document.querySelector('#pagination')
+const renderPagination = (data) => {
+   labelsToRender = Math.round((data.length / pagination.limit) + .49999)
    $pagination.innerHTML = Array.from(Array(labelsToRender).keys()).map(label => `
-        <span ${label+1 == pagination.current ? 'class="active"':''}>
+        <span index=${label+1} ${label+1 == pagination.current ? 'class="active"':''}>
             ${label+1}
         </span>
    `)
@@ -73,7 +72,7 @@ const getCompetenciesToRender = (competencies) => competencies.slice(
     pagination.current * pagination.limit
 )
 
-const getFilteredCompetencies = () => competencies
+const getFilteredCompetencies = (value) => competencies
     .filter(competence => 
         competence
         .name
@@ -83,11 +82,23 @@ const getFilteredCompetencies = () => competencies
 
 window.addEventListener("load", () => {
     renderCompetencies(competencies)
-    renderPagination()
+    renderPagination(competencies)
 })
 
 $inputSearch.addEventListener("keyup", (e) => {
     value = e.target.value.replace(" ", "").toUpperCase() 
-    filteredCompetencies = getFilteredCompetencies()
+    filteredCompetencies = getFilteredCompetencies(value)
     renderCompetencies(filteredCompetencies)
+    renderPagination(filteredCompetencies)
+})
+
+$pagination.addEventListener("click", (e) => {
+    if(e.target.nodeName == "SPAN") {
+        labelIndex = e.target.getAttribute("index")
+        value = $inputSearch.value.replace(" ", "").toUpperCase()
+        filteredCompetencies = getFilteredCompetencies(value)
+        pagination.current = labelIndex
+        renderPagination(filteredCompetencies)
+        renderCompetencies(filteredCompetencies)
+    }
 })
