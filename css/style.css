@@ -116,6 +116,23 @@ main h1 span:nth-child(5)
     line-height: 35px;
 }
 
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagination span {
+    cursor: pointer;
+    padding: .2rem .4rem;
+    margin: 0 .2rem;
+}
+
+#pagination span.active {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
 footer {
     text-align: center;
     font-size: 12px;

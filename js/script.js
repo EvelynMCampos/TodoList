@@ -47,24 +47,24 @@ const competencies = [
 
 const renderPagination = (data) => {
    labelsToRender = Math.round((data.length / pagination.limit) + .49999)
-   $pagination.innerHTML = Array.from(Array(labelsToRender).keys()).map(label => `
+   $pagination.innerHTML = Array.from(Array(labelsToRender).keys()).reduce((acc, label) => acc + `
         <span index=${label+1} ${label+1 == pagination.current ? 'class="active"':''}>
             ${label+1}
         </span>
-   `)
+   `, '')
 }
 
 const renderCompetencies = (data) => {
     competenciesToRender = getCompetenciesToRender(data)
     $competenciesList = document.querySelector("#competencies-list")
-    $competenciesList.innerHTML = competenciesToRender.map(competence => `
+    $competenciesList.innerHTML = competenciesToRender.reduce((acc,competence) => acc + `
             <div class="item">
                 <img src=${competence.icon} class="icon">
                 <span class="name">
                     ${competence.name}
                 </span>
             </div>
-    `)
+    `, '')
 }
 
 const getCompetenciesToRender = (competencies) => competencies.slice(
