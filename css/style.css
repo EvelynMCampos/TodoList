@@ -138,7 +138,7 @@ footer {
     margin-top: 20px;
     font-style: italic;
     color: #999;
-    position: absolute;
+    position: relative;
     bottom: .5rem;
     left: 50%;
     transform: translateX(-50%);
