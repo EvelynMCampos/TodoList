@@ -9,39 +9,39 @@ const pagination = {
 const competencies = [
     {
         name: "HTML",
-        icon: "https://cdn-icons-png.flaticon.com/512/1051/1051277.png",
+        icon: "assets/html-logo.png",
     },
     {
         name: "CSS",
-        icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+        icon: "assets/css-logo.png",
     },
     {
         name: "JavaScript",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+        icon: "assets/javascript-logo.png",
     },
     {
         name: "GIT",
-        icon: "https://cdn-icons-png.flaticon.com/512/4494/4494748.png",
+        icon: "assets/git-logo.png",
     },
     {
         name: "GitHub",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968846.png",
+        icon: "assets/github-logo.png",
     },
     {
         name: "Python",
-        icon: "https://cdn-icons-png.flaticon.com/512/1387/1387537.png",
+        icon: "assets/python-logo.png",
     },
     {
         name: "ReactJS",
-        icon: "https://cdn-icons-png.flaticon.com/512/3334/3334886.png",
+        icon: "assets/reactjs-logo.png",
     },
     {
         name: "Jest",
-        icon: "https://cdn-icons-png.flaticon.com/512/6402/6402320.png",
+        icon: "assets/jest-logo.png",
     },
     {
         name: "Cypress",
-        icon: "https://cdn-icons-png.flaticon.com/512/2033/2033413.png",
+        icon: "assets/cypress-logo.png",
     },
 ]
 
