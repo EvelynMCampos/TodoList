@@ -94,7 +94,6 @@ main h1 span:nth-child(5)
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    
 }
 
 #competencies-list .item {
@@ -148,6 +147,8 @@ footer {
 /* 
 Ajuste para desktop
 */
-@media only screen and (min-width: 600px) {
- 
-  }
+@media only screen and (max-width: 800px) {
+    #competencies-list {
+        justify-content: center;
+    }
+}
